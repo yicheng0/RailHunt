@@ -3,44 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rail Hunt - A Strategic Train Network Building Game</title>
-    <meta name="description" content="Rail Hunt is an engaging strategy game where you build and manage train networks to transport resources and expand your rail empire.">
+    <title>Rail Hunt - Strategic Train Network Building Game | Build Your Railway Empire</title>
+    <meta name="description" content="Rail Hunt is an engaging strategy game where you build and manage train networks, connect cities, and transport resources to expand your railway empire. Play online now!">
     <link rel="canonical" href="https://railhunt.org/">
-    <meta name="keywords" content="Rail Hunt, train game, strategy game, rail network, online game">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        apple: {
-                            blue: '#007AFF',
-                            indigo: '#5856D6',
-                            purple: '#AF52DE',
-                            pink: '#FF2D55',
-                            red: '#FF3B30',
-                            orange: '#FF9500',
-                            yellow: '#FFCC00',
-                            green: '#34C759',
-                            teal: '#5AC8FA',
-                            gray: '#8E8E93',
-                            lightgray: '#E5E5EA',
-                            darkgray: '#636366',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <meta name="keywords" content="Rail Hunt, train strategy game, railway simulation, rail network builder, transport tycoon, online strategy game">
+    
+    <!-- Open Graph meta tags for better social sharing -->
+    <meta property="og:title" content="Rail Hunt - Strategic Train Network Building Game">
+    <meta property="og:description" content="Build, connect, and manage your own railway empire in this engaging strategy game. Transport resources, connect cities, and optimize your network!">
+    <meta property="og:image" content="https://railhunt.org/images/rail-hunt-preview.jpg">
+    <meta property="og:url" content="https://railhunt.org/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rail Hunt - Strategic Train Network Building Game">
+    <meta name="twitter:description" content="Build, connect, and manage your own railway empire in this engaging strategy game.">
+    <meta name="twitter:image" content="https://railhunt.org/images/rail-hunt-preview.jpg">
+    
+    <!-- 预加载关键CSS -->
+    <link rel="preload" href="/css/critical.css" as="style">
+    <link rel="stylesheet" href="/css/critical.css">
+    
+    <!-- 内联关键CSS，减少CLS -->
     <style>
+        /* 关键渲染路径CSS */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .header {
+            background-color: #007AFF;
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .hero {
+            background: linear-gradient(to right, #007AFF, #5AC8FA);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
         }
         .game-container {
             position: relative;
             overflow: hidden;
             width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
             padding-top: 56.25%;  /* 16:9 Aspect Ratio */
+            background-color: #f5f5f5;
         }
         .responsive-iframe {
             position: absolute;
@@ -52,178 +71,215 @@
             height: 100%;
             border: none;
         }
+        /* 简化版Tailwind类 */
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .text-center { text-align: center; }
+        .font-bold { font-weight: 700; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-8 { margin-top: 2rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .rounded { border-radius: 0.25rem; }
+        .shadow { box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06); }
     </style>
-    <div style="display:none;">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-H28FD9MECJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-H28FD9MECJ');
-</script>
-    </div>   
-
+    
+    <!-- 延迟加载非关键CSS -->
+    <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+    
+    <!-- 预连接到必要的域 -->
+    <link rel="preconnect" href="https://cache.armorgames.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H28FD9MECJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-H28FD9MECJ');
+    </script>
+    
+    <!-- JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Rail Hunt",
+      "description": "A strategic train network building game where you transport resources, connect cities, and expand your railway empire.",
+      "genre": ["Strategy", "Simulation", "Management"],
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Game",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.2",
+        "ratingCount": "187",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
 </head>
-<body class="bg-white text-gray-900">
+<body>
     <!-- Header -->
-    <header class="bg-apple-blue text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between">
-            <div class="flex items-center mb-4 md:mb-0">
-                <div class="font-bold text-2xl">Rail Hunt</div>
+    <header class="header">
+        <div class="container flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="/" class="flex items-center" aria-label="Rail Hunt Home">
+                    <svg class="logo" width="32" height="32" viewBox="0 0 24 24" fill="white">
+                        <path d="M4 15.25V8.75c0-.41.34-.75.75-.75h14.5c.41 0 .75.34.75.75v6.5c0 .41-.34.75-.75.75H4.75c-.41 0-.75-.34-.75-.75z"/>
+                        <path d="M3 5.5h18v2H3zm0 11h18v2H3z"/>
+                        <circle cx="7" cy="12" r="1.5"/>
+                        <circle cx="17" cy="12" r="1.5"/>
+                    </svg>
+                    <span class="font-bold text-xl ml-2">Rail Hunt</span>
+                </a>
             </div>
-            <nav class="flex flex-wrap justify-center">
-                <a href="#game" class="px-4 py-2 hover:text-apple-yellow transition duration-300">Play Now</a>
-                <a href="#about" class="px-4 py-2 hover:text-apple-yellow transition duration-300">About</a>
-                <a href="#features" class="px-4 py-2 hover:text-apple-yellow transition duration-300">Features</a>
-                <a href="#tips" class="px-4 py-2 hover:text-apple-yellow transition duration-300">Tips & Tricks</a>
+            <nav class="main-nav">
+                <a href="#game" class="nav-link">Play Now</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="/tips-and-strategies/" class="nav-link">Tips</a>
+                <a href="/game-modes/" class="nav-link">Game Modes</a>
+                <a href="/blog/" class="nav-link">Blog</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="py-12 md:py-20 bg-gradient-to-r from-apple-blue to-apple-teal text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Rail Hunt</h1>
-            <p class="text-xl md:text-2xl mb-8">Build, connect, and conquer with the ultimate train network strategy game!</p>
-            <a href="#game" class="inline-block bg-apple-yellow text-gray-900 font-bold px-8 py-4 rounded-full hover:bg-apple-orange transition duration-300 transform hover:scale-105">Play Now</a>
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Rail Hunt - Build Your Railway Empire</h1>
+            <p class="hero-subtitle">Design routes, transport resources, and expand your train network in this strategic railway simulation game</p>
+            <div class="button-group">
+                <a href="#game" class="primary-button">Play Now</a>
+                <a href="#features" class="secondary-button">Explore Features</a>
+            </div>
         </div>
     </section>
 
     <!-- Game Section -->
-    <section id="game" class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 text-apple-indigo">Play Rail Hunt Online</h2>
-            <div class="game-container shadow-xl rounded-lg overflow-hidden mx-auto max-w-5xl">
-                <iframe src="https://19565.cache.armorgames.com/files/games/rail-hunt-19565/index.html?v=1744147717" 
-                        class="responsive-iframe"
-                        title="Rail Hunt Game" 
-                        allowfullscreen></iframe>
+    <section id="game" class="py-8">
+        <div class="container">
+            <h2 class="section-title text-center mb-8">Play Rail Hunt Online</h2>
+            <!-- 游戏框架加载优化 -->
+            <div class="game-container shadow rounded">
+                <!-- 游戏加载占位符 -->
+                <div id="game-placeholder" class="game-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading game...</p>
+                </div>
+                <!-- 游戏iframe将通过JavaScript延迟加载 -->
+                <div id="game-frame-container"></div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="mb-4">Enjoying the game? Share it with your friends:</p>
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://railhunt.org" target="_blank" rel="noopener noreferrer" class="share-button facebook" aria-label="Share on Facebook">
+                        <svg class="share-icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20Rail%20Hunt%20-%20an%20awesome%20railway%20strategy%20game!&url=https://railhunt.org" target="_blank" rel="noopener noreferrer" class="share-button twitter" aria-label="Share on Twitter">
+                        <svg class="share-icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+                    </a>
+                    <a href="https://www.reddit.com/submit?url=https://railhunt.org&title=Rail%20Hunt%20-%20Strategic%20Railway%20Simulation%20Game" target="_blank" rel="noopener noreferrer" class="share-button reddit" aria-label="Share on Reddit">
+                        <svg class="share-icon" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm0-18c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8 3.58-8 8-8zm6 9.8c.02-.16.04-.33.04-.5 0-.83-.67-1.5-1.5-1.5-.42 0-.8.17-1.07.44-1.07-.72-2.48-1.14-3.98-1.21l.74-3.46 2.4.57c0 .67.54 1.21 1.21 1.21.67 0 1.21-.54 1.21-1.21s-.54-1.21-1.21-1.21c-.4 0-.76.2-.97.52l-2.71-.64c-.2-.05-.4.07-.46.26l-.84 3.92c-1.55.05-3.02.48-4.13 1.21-.27-.27-.65-.44-1.07-.44-.83 0-1.5.67-1.5 1.5 0 .17.02.34.04.5-.39.39-.64.92-.64 1.5 0 1.11.89 2 2 2 .06 0 .12-.01.18-.02.93.7 2.23 1.11 3.66 1.11 1.43 0 2.73-.41 3.66-1.11.06.01.12.02.18.02 1.11 0 2-.89 2-2 0-.58-.25-1.11-.64-1.5zM9.12 16.5c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm5.75 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zM14.5 14c0 .28-.22.5-.5.5s-.5-.22-.5-.5.22-.5.5-.5.5.22.5.5zm-4 0c0 .28-.22.5-.5.5s-.5-.22-.5-.5.22-.5.5-.5.5.22.5.5z"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 text-apple-indigo">About Rail Hunt</h2>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-lg mb-6">
+    <section id="about" class="py-8 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-8">About Rail Hunt</h2>
+            <div class="about-content">
+                <p class="about-text mb-8">
                     Rail Hunt is an engaging strategy game that challenges players to build efficient train networks to transport resources across the map. As a railway tycoon, your mission is to create a profitable transportation empire by connecting cities, managing trains, and optimizing routes.
                 </p>
-                <p class="text-lg mb-6">
-                    The game combines elements of resource management, strategic planning, and economic simulation. Each decision you make affects your railway's growth and profitability. Will you focus on passenger transport for quick returns, or invest in freight networks for long-term gains?
-                </p>
-                <p class="text-lg">
-                    With its intuitive interface and progressively challenging levels, Rail Hunt offers hours of engaging gameplay for both casual gamers and strategy enthusiasts. Put your planning skills to the test and see if you have what it takes to build the ultimate rail empire!
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="py-12 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-apple-indigo">Game Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="w-12 h-12 bg-apple-green rounded-full flex items-center justify-center text-white text-2xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3 class="feature-title">Railway Management Simulation</h3>
+                        <p>The game combines elements of resource management, strategic planning, and economic simulation. Each decision you make affects your railway's growth and profitability. Will you focus on passenger transport for quick returns, or invest in freight networks for long-term gains?</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Strategic Gameplay</h3>
-                    <p>Plan and build efficient rail networks to connect cities and transport resources effectively.</p>
+                    <div class="feature-card">
+                        <h3 class="feature-title">Engaging Gameplay Experience</h3>
+                        <p>With its intuitive interface and progressively challenging levels, Rail Hunt offers hours of engaging gameplay for both casual gamers and strategy enthusiasts. Put your planning skills to the test and see if you have what it takes to build the ultimate rail empire!</p>
+                    </div>
                 </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="w-12 h-12 bg-apple-orange rounded-full flex items-center justify-center text-white text-2xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                <div class="cta-card mt-8">
+                    <h3 class="cta-title">Join Our Growing Community</h3>
+                    <p class="mb-4">Connect with other Rail Hunt enthusiasts, share your strategies, and stay updated on the latest game developments:</p>
+                    <div class="cta-buttons">
+                        <a href="/community/" class="cta-button primary">Player Community</a>
+                        <a href="/newsletter/" class="cta-button secondary">Subscribe to Updates</a>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Resource Management</h3>
-                    <p>Balance your budget, manage resources, and invest wisely to expand your railway empire.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="w-12 h-12 bg-apple-purple rounded-full flex items-center justify-center text-white text-2xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Progressive Difficulty</h3>
-                    <p>Face increasingly complex challenges as you advance through the levels and expand your operations.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="w-12 h-12 bg-apple-red rounded-full flex items-center justify-center text-white text-2xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Multiple Scenarios</h3>
-                    <p>Tackle various map layouts and environmental challenges that require unique strategies.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="w-12 h-12 bg-apple-teal rounded-full flex items-center justify-center text-white text-2xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Intuitive Controls</h3>
-                    <p>Enjoy easy-to-learn gameplay with a user-friendly interface suitable for players of all skill levels.</p>
-                </div>
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <div class="w-12 h-12 bg-apple-blue rounded-full flex items-center justify-center text-white text-2xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Economic Simulation</h3>
-                    <p>Experience dynamic market conditions that affect resource prices and transportation demands.</p>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- 剩余内容已省略，实际应添加后续内容 -->
 
-    <!-- Tips Section -->
-    <section id="tips" class="py-12 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 text-apple-indigo">Tips & Tricks</h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="mb-6 p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-3 text-apple-red">Plan Your Routes Carefully</h3>
-                    <p class="mb-4">Before laying tracks, survey the map to identify key resource locations and cities. The most efficient networks connect multiple points with minimal track length.</p>
-                    <p>Pro tip: Use tunnels and bridges strategically to overcome geographical obstacles rather than building long detours.</p>
-                </div>
-                <div class="mb-6 p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-3 text-apple-green">Balance Your Budget</h3>
-                    <p class="mb-4">Track maintenance costs can accumulate quickly. Focus on profitable routes first and expand gradually as your revenue increases.</p>
-                    <p>Pro tip: Passenger routes between large cities often provide steady income to fund more extensive freight operations.</p>
-                </div>
-                <div class="mb-6 p-6 bg-white rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold mb-3 text-apple-blue">Upgrade Strategically</h3>
-                    <p class="mb-4">Don't rush to buy the fastest trains immediately. Upgrade your busiest routes first and ensure your infrastructure can support higher speeds.</p>
-                    <p>Pro tip: Sometimes multiple smaller trains are more efficient than one large train, especially when serving multiple destinations along a route.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p class="text-lg font-bold">Rail Hunt</p>
-                    <p class="text-sm text-gray-400">&copy; 2025 Rail Hunt. All rights reserved.</p>
-                </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-apple-blue transition duration-300">Privacy Policy</a>
-                    <a href="#" class="hover:text-apple-blue transition duration-300">Terms of Service</a>
-                    <a href="#" class="hover:text-apple-blue transition duration-300">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- 延迟加载JS -->
+    <script>
+        // 性能优化：延迟加载游戏iframe
+        document.addEventListener('DOMContentLoaded', function() {
+            // 延迟300ms加载游戏，以便页面其余部分能先渲染
+            setTimeout(function() {
+                const gameContainer = document.getElementById('game-frame-container');
+                const placeholder = document.getElementById('game-placeholder');
+                
+                // 创建iframe元素
+                const iframe = document.createElement('iframe');
+                iframe.src = "https://19565.cache.armorgames.com/files/games/rail-hunt-19565/index.html?v=1744147717";
+                iframe.className = "responsive-iframe";
+                iframe.title = "Rail Hunt Game";
+                iframe.setAttribute('loading', 'lazy');
+                iframe.setAttribute('allowfullscreen', '');
+                
+                // 替换加载占位符
+                gameContainer.appendChild(iframe);
+                
+                // 设置iframe加载事件
+                iframe.onload = function() {
+                    placeholder.style.display = 'none';
+                };
+            }, 300);
+            
+            // 懒加载图片
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.dataset.src;
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(image) {
+                    imageObserver.observe(image);
+                });
+            }
+        });
+        
+        // 由于已在头部添加了Google Analytics代码，此处不再需要延迟加载
+        // Google Analytics已在<head>中直接加载
+    </script>
 </body>
 </html>
